@@ -107,7 +107,7 @@ const x = setInterval(function () {
   const timeRemaining = countDownDate - now;
 
   // Calculate the days, hours, minutes, and seconds remaining
-  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+  const days = 2;
   const hours = Math.floor(
     (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
@@ -134,20 +134,35 @@ const x = setInterval(function () {
 }, 1000);
 
 // Set the minimum and maximum values for the counter
-const min = 0;
-const max = 999;
+const minIncrement = 1;
+const maxIncrement = 50;
+
+const min = 50;
+const max = 500;
+const middle = 225;
 
 // Get the counter element
 const counter = document.getElementById("counter");
 
+if (!counter.InnerHTML) {
+  counter.innerHTML =
+    Math.floor(Math.random() * (maxIncrement - minIncrement + 5)) +
+    minIncrement +
+    min;
+}
 // Update the counter with a random number every second
 setInterval(function () {
-  // Generate a random number between min and max
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
+  const current = parseInt(counter.innerHTML);
+  const difference =
+    Math.floor(Math.random() * (maxIncrement - minIncrement + 5)) +
+    minIncrement;
+  if (current > middle) {
+    counter.innerHTML = current - difference;
+  } else {
+    counter.innerHTML = current + difference;
+  }
   // Update the counter with the new random number
-  counter.innerHTML = randomNumber;
-}, 5000);
+}, 1000);
 
 // Get the counter element
 const counterNumber = document.getElementById("number");

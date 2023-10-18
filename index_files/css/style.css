@@ -105,21 +105,26 @@ form input[type="submit"] {
   background-color: var(--primary-color);
 }
 
-#close-icon {
-  position: absolute;
-  right: 33%;
-  bottom: 12%;
-  width: 20px;
-}
-
 #close-icon-ar {
   position: absolute;
-  right: 56%;
+  right: 10%;
   bottom: 5%;
   width: 20px;
   opacity: 65%;
   animation: textgrowth1 1s infinite alternate;
   justify-content: center;
+  direction: rtl;
+}
+
+#close-icon-en {
+  position: absolute;
+  right: 60%;
+  bottom: 5%;
+  width: 20px;
+  opacity: 65%;
+  animation: textgrowth1 1s infinite alternate;
+  justify-content: center;
+  direction: ltr;
 }
 
 @keyframes textgrowth1 {
@@ -130,14 +135,6 @@ form input[type="submit"] {
   100% {
     width: 30px;
   }
-}
-
-#close-icon-en {
-  position: absolute;
-  right: 41%;
-  bottom: 9%;
-  width: 20px;
-  opacity: 65%;
 }
 
 .border-bottom {
@@ -434,23 +431,6 @@ select,
     color: #000 !important;
     font-size: 14px !important;
     font-weight: bold !important;
-  }
-
-  #close-icon {
-    position: absolute;
-    right: 35%;
-    bottom: 10%;
-    width: 15px;
-  }
-
-  #close-icon-ar {
-    position: absolute;
-    right: 56%;
-    bottom: 11%;
-    width: 20px;
-    opacity: 65%;
-    animation: textgrowth1 2s infinite alternate;
-    justify-content: center;
   }
 
   @keyframes textgrowth1 {
@@ -806,6 +786,7 @@ select,
   align-items: center;
   font-size: 2rem;
   font-weight: bold;
+  direction: ltr;
 }
 
 .countdown-item {
@@ -858,17 +839,20 @@ select,
 
 .image-text {
   position: absolute;
-  bottom: 45px;
+  bottom: 40px;
   /* Adjusted to move the text 2 pixels down */
   left: 10px;
   background: transparent;
   /* Background color for the text */
   padding: 5px;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
 }
 
-.sticky-buttons {
+.sticky-buttons,
+.old-price,
+.old_price {
+  position: relative;
   direction: ltr;
 }
 
