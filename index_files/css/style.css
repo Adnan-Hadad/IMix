@@ -347,7 +347,7 @@ select,
   justify-content: center;
   align-items: center;
   position: absolute;
-  bottom: 10px !important;
+  top: 10px !important;
 }
 
 .carousel-control-next .customBorder {
@@ -449,7 +449,7 @@ select,
   }
 
   .landing_home {
-    background-image: url("../images/img2.PNG");
+    /* background-image: url("../images/img2.PNG"); */
     background-position: center;
     /* Center the image */
     background-repeat: no-repeat;
