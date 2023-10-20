@@ -162,18 +162,17 @@ setInterval(function () {
     counter.innerHTML = current + difference;
   }
   // Update the counter with the new random number
-}, 1000);
+}, Math.floor(Math.random() * 2000) + 2000);
 
 // Get the counter element
 const counterNumber = document.getElementById("number");
 
 // Set the initial counter value
-let counterValue = 100;
+let counterValue = 115;
+counterNumber.textContent = counterValue;
 
-// Update the counter every second
+// Update the counter every 2 or 3 seconds with a random increment between 0 and 9
 setInterval(() => {
-  counterValue++;
-  counterValue++;
-  counterValue = counterValue + 16;
+  counterValue = counterValue + Math.floor(Math.random() * 10);
   counterNumber.textContent = counterValue;
-}, 10000);
+}, Math.floor(Math.random() * 2000) + 2000);
