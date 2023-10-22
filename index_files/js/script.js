@@ -96,7 +96,7 @@ function validateForm(event) {
 }
 
 // Set the date to count down to
-const countDownDate = new Date("Oct 31, 2023 00:00:00").getTime();
+let countDownDate = new Date().getTime() + 2 * 24 * 60 * 60 * 1000; // 2 days in milliseconds
 
 // Update the countdown every second
 const x = setInterval(function () {
@@ -107,7 +107,7 @@ const x = setInterval(function () {
   const timeRemaining = countDownDate - now;
 
   // Calculate the days, hours, minutes, and seconds remaining
-  const days = 2;
+  const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
   const hours = Math.floor(
     (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
   );
